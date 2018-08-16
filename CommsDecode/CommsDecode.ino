@@ -52,7 +52,7 @@ float dataDecode(char b1, char b2){
 								//Check for 0
 								if( b1 == 0xFF && b2 = 0xFF) {
 																val = 0;
-								} else if (b1 && 0x10000000) { // check flag for integer
+								} else if (b1 > 127) { // check flag for integer
 																val = ((int)b1 - 128)*100 + (int)b2;
 																Serial.print("integer value decoded as: ");
 																Serial.println(val);
